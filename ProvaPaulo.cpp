@@ -3,21 +3,21 @@
 #include <sstream>
 
 int main() {
-
+// armazena os numeros em um vetor
     std::vector<int> dados;
     std::string linhas;
     int valor;
 
-    std::cout << "Informe os dados (separados por espaÁo): ";
-    std::getline(std::cin, linhas); // LÍ a linha inteira de entrada
+    std::cout << "Informe os dados (separados por espa√ßo): ";
+    std::getline(std::cin, linhas); // L√™ a linha inteira de entrada
 
-    // Separar os n˙meros da linha
+    // Separar os n√∫meros da linha
     std::stringstream ss(linhas);
     while (ss >> valor) {
         dados.push_back(valor);
     }
 
-    // Verifica se n„o tem nenhum dado quebrado
+    // Verifica se n√£o tem nenhum dado quebrado
     if (dados.size() == 0) {
         std::cout << "Nenhum dado foi inserido no momento.\n";
         return 0;
@@ -34,7 +34,7 @@ int main() {
     }
     std::cout << "]\n";
 
-    // Encontrar o maior valor para determinar a largura do gr·fico
+    // Encontrar o maior valor para determinar a largura do gr√°fico
     int ValorMaximo = 0;
     for (int i = 0; i < dados.size(); i++) {
         if (dados[i] > ValorMaximo) {
@@ -46,7 +46,7 @@ int main() {
     std::cout << "Total de linhas: " << dados.size() << "\n";
     std::cout << "Total de colunas: " << ValorMaximo << "\n\n";
 
-    // Exibir o gr·fico de barras horizontal
+    // Exibir o gr√°fico de barras horizontal
     for (int i = 0; i < dados.size(); i++) {
         std::cout << i + 1 << "|";
         for (int j = 0; j < dados[i]; j++) {
@@ -55,21 +55,21 @@ int main() {
         std::cout << "\n";
     }
 
-            // Adicionando os traÁos em cima dos n˙meros
+            // Adicionando os tra√ßos em cima dos n√∫meros
         std::cout << " ";
-        std::cout << "+"; // Adiciona o sÌmbolo "+"
+        std::cout << "+"; // Adiciona o s√≠mbolo "+"
         for (int i = 0; i <= ValorMaximo; i++) {
-            std::cout << " -"; // Adiciona os traÁos
+            std::cout << " -"; // Adiciona os tra√ßos
         }
         std::cout << "\n";
 
-            // Exibir os Ìndices
-        std::cout << " "; // Adiciona um espaÁo para alinhar o 0 abaixo do +
+            // Exibir os √≠ndices
+        std::cout << " "; // Adiciona um espa√ßo para alinhar o 0 abaixo do +
         for (int i = 0; i <= ValorMaximo; i++) {
             if (i == 0) {
-                std::cout << i; // Imprime o Ìndice 0 sem espaÁo
+                std::cout << i; // Imprime o √≠ndice 0 sem espa√ßo
             } else {
-                std::cout << " " << i; // Imprime os outros Ìndices com espaÁo
+                std::cout << " " << i; // Imprime os outros √≠ndices com espa√ßo
             }
         }
 
